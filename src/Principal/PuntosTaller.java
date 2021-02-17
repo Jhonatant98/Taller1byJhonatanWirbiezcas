@@ -1,5 +1,8 @@
-package Metodos;
+package Principal;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class PuntosTaller {
@@ -26,7 +29,7 @@ public class PuntosTaller {
         }else if (num1==num2){
             System.out.println("son iguales");
         }else {
-            System.out.println("El mayor es"+num2);
+            System.out.println("El mayor es "+num2);
         }
     }
 
@@ -161,6 +164,75 @@ public class PuntosTaller {
         System.out.println("el total i: "+ contI);
         System.out.println("el total o: "+ contO);
         System.out.println("el total u: "+ contU);
+    }
+
+    public void punto13(){
+        Date date = new Date();
+        DateFormat hourdateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss ");
+        System.out.println("Hora y fecha: "+hourdateFormat.format(date));
+    }
+
+    public void punto14(){
+        System.out.println("Ingrese un número");
+        int num = sc.nextInt();
+        while(num<=1000){
+            System.out.println(num);
+            num += 2;
+        }
+    }
+
+    public void punto15() {
+        boolean band = true;
+        while (band) {
+            menu();
+            try {
+                int rptas = sc.nextInt();
+                switch (rptas) {
+                    case 1:
+                        System.out.println("Ingresaste opcion 1");
+                        break;
+                    case 2:
+                        System.out.println("Ingresaste opcion 2");
+                        break;
+                    case 3:
+                        System.out.println("Ingresaste opcion 3");
+                        break;
+                    case 4:
+                        System.out.println("Ingresaste opcion 4");
+                        break;
+                    case 5:
+                        System.out.println("Ingresaste opcion 5");
+                        break;
+                    case 6:
+                        System.out.println("Ingresaste opcion 6");
+                        break;
+                    case 7:
+                        System.out.println("Ingresaste opcion 7");
+                        break;
+                    case 8:
+                        System.out.println("El programa finalizo");
+                        band = false;
+                        break;
+                    default:
+                        System.out.println("Solo opciones entre 1 y 8");
+                }
+            } catch (Exception e) {
+                System.out.println("Solo se aceptan numeros");
+                sc.next();
+            }
+        }
+    }
+    public void menu(){
+        System.out.println("****** GESTION CINEMATOGRÁFICA ********\n"+
+                "1.Nuevo actor\n" +
+                "2.Buscar actor\n" +
+                "3.Eliminar actor\n" +
+                "4.Modificar actor\n" +
+                "5.Ver todos los actores\n" +
+                "6.Ver peliculas de los actores\n" +
+                "7.Ver categoria de los actores\n"+
+                "8.salir\n"+
+                "Ingrese numero de la semana a consultar:");
     }
 }
 
